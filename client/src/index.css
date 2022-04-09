@@ -1,0 +1,169 @@
+@font-face {
+  font-family: Avenir;
+  src: url("/public/assets/fonts/AvenirLTStd-Medium.otf");
+}
+
+@font-face {
+  font-family: Avenir-Bold;
+  src: url("/public/assets/fonts/Metropolis-Bold.otf");
+}
+
+@font-face {
+  font-family: Avenir-light;
+  src: url("/public/assets/fonts/AvenirLTStd-Book.otf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Avenir;
+}
+
+/* set Overflow */
+.form-create-link {
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ov-hidden {
+  overflow: hidden !important;
+}
+
+/* Set Sizing */
+.vh-10 {
+  height: 8vh;
+}
+
+.vh-90 {
+  height: auto;
+  min-height: 90vh;
+  max-height: 100%;
+}
+
+.h-60 {
+  height: 430px;
+}
+
+.w-60 {
+  width: 55%;
+}
+
+.w-80 {
+  width: 72%;
+}
+
+.nav-icon {
+  max-width: 25px !important;
+  height: 25px !important;
+}
+
+.utility-icon {
+  max-width: 50px;
+  max-height: 50px;
+}
+/* Set Background*/
+
+.bg-dumblink {
+  background-color: #ff9f00 !important;
+  border: 2px solid #ff9f00 !important;
+}
+
+.bg-hero {
+  background-image: url("/public/assets/images/background.png");
+  height: 91vh;
+}
+
+.bg-gray {
+  background: #bcbcbc40;
+}
+
+.bg-red {
+  background: #ff0000 !important;
+  border: 2px solid #ff0000 !important;
+}
+
+/* Set font */
+
+.f-bold {
+  font-family: Avenir-Bold;
+}
+
+.f-light {
+  font-family: Avenir-Light;
+}
+
+/*Set Outline & Border */
+
+.ol-none {
+  outline: none !important;
+  border: none;
+}
+
+.rounded-8 {
+  border-radius: 10px !important;
+}
+
+/* Set Modal */
+
+.modal-content-form {
+  width: 100%;
+  height: auto;
+  max-width: 430px;
+  border-radius: 10px !important;
+}
+
+.modal-dialog-form {
+  justify-content: center;
+}
+
+/* Set Input Create Link */
+.form-input {
+  border-bottom: #bcbcbc 2px solid !important;
+  border-top: none !important;
+  border-right: none !important;
+  border-left: none !important;
+  outline: none !important;
+}
+
+.form-input:focus {
+  border-bottom: #bcbcbc 2px solid !important;
+  border: none;
+  outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+
+/* Additional style */
+
+a {
+  text-decoration: none !important;
+}
+
+textarea:hover,
+input:hover,
+textarea:active,
+input:active,
+textarea:focus,
+button:focus,
+button:active,
+button:hover,
+label:focus,
+.btn:active,
+.btn.active {
+  outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+
+.form-auth:focus {
+  border: 2px solid #bcbcbc !important;
+  outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+
+.form-auth:valid {
+  background: #bcbcbc40 !important;
+  border: 2px solid #bcbcbc;
+}
