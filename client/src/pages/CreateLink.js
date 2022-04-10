@@ -1,13 +1,5 @@
 import React, { useState } from "react";
-import {
-  Col,
-  Container,
-  Row,
-  Image,
-  Button,
-  Form,
-  InputGroup,
-} from "react-bootstrap";
+import { Col, Container, Row, Image, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 import Navbar from "../components/Navbar";
