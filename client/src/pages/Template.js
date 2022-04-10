@@ -24,7 +24,7 @@ export default () => {
           <div className="bg-white py-3 mb-4">
             <h4 className="py-1 ms-4 f-bold">Template</h4>
           </div>
-          <div className="bg-gray vh-90 pt-5 ps-3">
+          <div className="bg-gray vh-90 pt-5 ps-1">
             <Link to="/choose-template">
               <Image src="/assets/images/phone-1.png" />
             </Link>
