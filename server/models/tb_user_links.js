@@ -20,10 +20,12 @@ module.exports = (sequelize, DataTypes) => {
   tb_user_links.init(
     {
       user_id: DataTypes.INTEGER,
+      image: DataTypes.STRING,
       title: DataTypes.STRING,
       description: DataTypes.TEXT,
       unique_link: DataTypes.STRING,
       view_count: DataTypes.INTEGER,
+      template: DataTypes.STRING,
     },
     {
       sequelize,

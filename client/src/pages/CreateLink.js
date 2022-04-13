@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Col, Container, Row, Image, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import Navbar from "../components/Navbar";
 
@@ -12,7 +12,27 @@ import {
 } from "../components/IconGroup";
 import FormCreateLink from "../components/FormCreateLink";
 
+import { UserContext } from "../context/userContext";
+
 export default () => {
+  const [state, dispatch] = useContext(UserContext);
+  const params = useParams();
+  const [templateImage, setTemplateImage] = useState();
+
+  const choosedTemplate = params.template;
+
+  useEffect(() => {
+    if (choosedTemplate == "milk") {
+      setTemplateImage("/assets/images/phone-1.png");
+    } else if (choosedTemplate == "aquos") {
+      setTemplateImage("/assets/images/phone-2.png");
+    } else if (choosedTemplate == "sunset") {
+      setTemplateImage("/assets/images/phone-3.png");
+    } else if (choosedTemplate == "self") {
+      setTemplateImage("/assets/images/phone-4.png");
+    }
+  }, []);
+
   return (
     <Container fluid>
       <Row>
@@ -26,17 +46,10 @@ export default () => {
             <h4 className="py-1 ms-4 f-bold">Template</h4>
           </div>
           <div className="bg-gray vh-90 py-5 ps-3">
-            <div className="w-100 d-flex align-items-center mb-4">
-              <div className="f-bold h4 m-0 ms-3">Create Link</div>
-              <div className="ms-auto me-5">
-                <Button className="btn text-white f-bold bg-dumblink fw-bold px-2 ml-auto rounded-8">
-                  Publish Link
-                </Button>
-              </div>
-            </div>
-            <div>
-              <FormCreateLink />
-            </div>
+            <FormCreateLink
+              templateImage={templateImage}
+              template={choosedTemplate}
+            />
           </div>
         </Col>
       </Row>

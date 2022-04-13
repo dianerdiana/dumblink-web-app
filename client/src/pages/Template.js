@@ -25,16 +25,16 @@ export default () => {
             <h4 className="py-1 ms-4 f-bold">Template</h4>
           </div>
           <div className="bg-gray vh-90 pt-5 ps-1">
-            <Link to="/choose-template">
+            <Link to="/create-link/milk">
               <Image src="/assets/images/phone-1.png" />
             </Link>
-            <Link to="/">
+            <Link to="/create-link/aquos">
               <Image src="/assets/images/phone-2.png" />
             </Link>
-            <Link to="/">
+            <Link to="/create-link/sunset">
               <Image src="/assets/images/phone-3.png" />
             </Link>
-            <Link to="/">
+            <Link to="/create-link/self">
               <Image src="/assets/images/phone-4.png" />
             </Link>
           </div>

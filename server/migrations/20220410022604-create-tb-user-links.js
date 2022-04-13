@@ -1,4 +1,5 @@
 "use strict";
+
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable("tb_user_links", {
@@ -17,6 +18,9 @@ module.exports = {
         onUpdate: "CASCADE",
         onDelete: "CASCADE",
       },
+      image: {
+        type: Sequelize.STRING,
+      },
       title: {
         type: Sequelize.STRING,
       },
@@ -28,6 +32,10 @@ module.exports = {
       },
       view_count: {
         type: Sequelize.INTEGER,
+        defaultValue: 0,
+      },
+      template: {
+        type: Sequelize.STRING,
       },
       createdAt: {
         allowNull: false,

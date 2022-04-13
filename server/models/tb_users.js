@@ -15,6 +15,13 @@ module.exports = (sequelize, DataTypes) => {
           name: "user_id",
         },
       });
+
+      tb_users.hasOne(models.tb_profiles, {
+        as: "profile",
+        foreignKey: {
+          name: "user_id",
+        },
+      });
     }
   }
   tb_users.init(

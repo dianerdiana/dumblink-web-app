@@ -6,14 +6,18 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import { BrowserRouter as Router } from "react-router-dom";
 
+import { UserContextProvider } from "./context/userContext";
+
 import { createRoot } from "react-dom/client";
 const container = document.getElementById("root");
 const root = createRoot(container);
 root.render(
   <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <UserContextProvider>
+      <Router>
+        <App />
+      </Router>
+    </UserContextProvider>
   </React.StrictMode>
 );
 

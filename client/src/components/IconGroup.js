@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const TemplateActive = () => {
   return (
-    <Link to="/" className="w-100 my-5 d-flex align-items-center">
+    <Link to="/template" className="w-100 my-5 d-flex align-items-center">
       <Image src="/assets/icons/template-icon.svg" className="nav-icon" />
       <span className="ms-3 text-warning h5 mt-2">Template</span>
     </Link>
@@ -12,7 +12,7 @@ export const TemplateActive = () => {
 
 export const TemplateInactive = () => {
   return (
-    <Link to="/" className="w-100 my-5 d-flex align-items-center">
+    <Link to="/template" className="w-100 my-5 d-flex align-items-center">
       <Image src="/assets/icons/template-inactive.svg" className="nav-icon" />
       <span className="ms-3 text-dark h5 mt-2">Template</span>
     </Link>

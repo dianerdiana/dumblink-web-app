@@ -1,32 +1,55 @@
-import { Row, Col, Image } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Row, Col, Image, Button } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
 
-export default () => {
+import ModalDelete from "./ModalDelete";
+
+import { API } from "../config/api";
+
+export default ({ title, link, views, image, idLink }) => {
+  const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {}, []);
   return (
-    <Row className="px-3 mb-4">
+    <>
+      {" "}
       <Col md={1}>
-        <Image src="/assets/images/waysfood.png" />
+        <Image src={image} className="img-preview" />
       </Col>
-      <Col className="ms-5 d-flex flex-column justify-content-center">
-        <div className="fs-4 f-bold">Waysfood</div>
-        <div className="f-light text-secondary">localhost:3000/waysfood</div>
+      <Col
+        as={Link}
+        to={"/" + link}
+        className="ms-5 d-flex flex-column justify-content-center"
+      >
+        <div className="fs-4 f-bold text-dark">{title}</div>
+        <div className="f-light text-secondary">
+          {"http://localhost:3000/" + link}
+        </div>
       </Col>
       <Col md={1} className="ms-5 d-flex flex-column justify-content-center">
-        <div className="fs-4 f-bold">10</div>
+        <div className="fs-4 f-bold">{views}</div>
         <div className="f-light text-secondary">visits</div>
       </Col>
       <Col md={3} className="ms-5 d-flex align-items-center">
-        <Link to="/">
+        <Link to={"/" + link}>
           <Image src="/assets/icons/view.png" className="utility-icon me-3" />
         </Link>
         <Link to="/">
           <Image src="/assets/icons/edit.png" className="utility-icon me-3" />
         </Link>
-        <Link to="/">
+        <Button
+          onClick={() => setShowModal(true)}
+          className="bg-transparent ol-none p-0"
+        >
           <Image src="/assets/icons/trash.png" className="utility-icon me-3" />
-        </Link>
+        </Button>
       </Col>
-    </Row>
+      <ModalDelete
+        show={showModal}
+        onHide={() => setShowModal(false)}
+        id_link={idLink}
+      />
+    </>
   );
 };

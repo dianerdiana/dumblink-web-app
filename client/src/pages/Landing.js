@@ -13,7 +13,11 @@ import {
 import Login from "../components/auth/Login";
 import Register from "../components/auth/Register";
 
+import { useNavigate } from "react-router-dom";
+
 export default () => {
+  const navigate = useNavigate();
+
   const [showLogin, setShowLogin] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
 
@@ -63,7 +67,11 @@ export default () => {
                   <br />
                   safe, fast and easy to use
                 </p>
-                <Button variant="dark" className="rounded-8 px-5 py-2 mt-5">
+                <Button
+                  onClick={() => navigate("/tTNlRES")}
+                  variant="dark"
+                  className="rounded-8 px-5 py-2 mt-5"
+                >
                   Get Started For Free
                 </Button>
               </Col>
