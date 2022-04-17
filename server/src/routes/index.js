@@ -15,15 +15,17 @@ const { addLink } = require("../controllers/links");
 //import middlewares
 const { auth } = require("../middlewares/auth");
 const { uploadFile, uploadImage } = require("../middlewares/uploadFile");
+const { getUser } = require("../controllers/users");
 
 //route auth
 router.post("/register", register);
 router.post("/login", login);
 router.get("/check-auth", auth, checkAuth);
+router.get("/user/:id", getUser);
 
 //Add User Link
 router.post("/add-user-link", auth, uploadImage("image"), addUserLink);
-router.get("/user-links", auth, getUserLinks);
+router.get("/user-links/:id", auth, getUserLinks);
 router.get("/user-link/:uniqueLink", getUserLink);
 router.delete("/delete-user-link/:id", deleteUserLink);
 router.patch("/update-view/:id", updateViews);

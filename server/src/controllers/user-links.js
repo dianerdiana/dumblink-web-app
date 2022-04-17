@@ -37,7 +37,7 @@ exports.addUserLink = async (req, res) => {
 };
 
 exports.getUserLinks = async (req, res) => {
-  const user_id = req.user.id;
+  const user_id = req.params.id;
   console.log(req.user);
 
   try {

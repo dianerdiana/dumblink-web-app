@@ -21,16 +21,16 @@ export default () => {
   const [state, dispatch] = useContext(UserContext);
   const [userLink, setUserLink] = useState();
 
-  // console.log(state);
+  console.log(state);
 
-  const getUserLinks = async () => {
-    const response = await API.get("/user-links");
+  const getUserLinks = async (id) => {
+    const response = await API.get("/user-links/" + id);
 
     setUserLink(response.data.data.links);
   };
 
   useEffect(() => {
-    getUserLinks();
+    getUserLinks(state.user.id);
   }, [state.user]);
 
   // useEffect(() => {

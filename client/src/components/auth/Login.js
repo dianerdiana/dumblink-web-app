@@ -11,6 +11,7 @@ export default (props) => {
   const navigate = useNavigate();
 
   const [state, dispatch] = useContext(UserContext);
+  // console.log(state);
   const [message, setMessage] = useState(null);
 
   // Store data with useState here ...
@@ -18,6 +19,8 @@ export default (props) => {
     email: "",
     password: "",
   });
+
+  // console.log(form);
 
   const { email, password } = form;
 
@@ -75,10 +78,35 @@ export default (props) => {
       setMessage(alert);
       console.log(error);
     }
+  };
 
-    useEffect(() => {
-      console.log("updated");
-    }, [state.user]);
+  const getUser = async () => {
+    try {
+      const config = {
+        headers: {
+          "Content-type": "application/json",
+        },
+      };
+
+      // Convert form data to string here ...
+      const body = JSON.stringify(form);
+
+      // Insert data user for login process here ...
+      const response = await API.post("/login", body, config);
+
+      console.log(response);
+
+      // Checking process
+      if (response.status == 200) {
+        // Send data to useContext
+        dispatch({
+          type: "LOGIN_SUCCESS",
+          payload: response.data.data.user,
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
