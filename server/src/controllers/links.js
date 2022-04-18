@@ -15,10 +15,10 @@ exports.addLink = async (req, res) => {
       },
     });
 
-    // res.status(200).send({
-    //   status: "success",
-    //   links: newLink,
-    // });
+    res.status(200).send({
+      status: "success",
+      links: newLink,
+    });
   } catch (error) {
     res.send({
       status: "failed",
